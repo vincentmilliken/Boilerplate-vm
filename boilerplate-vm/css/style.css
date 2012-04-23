@@ -10,8 +10,16 @@
 	HTML5 Doctor				:: http://html5doctor.com
 	and the HTML5 Boilerplate	:: http://html5boilerplate.com
 	
+	Contents:
+	Reset
+	Clear Fix (http://nicolasgallagher.com/micro-clearfix-hack/)
+	Quotes (html5doctor.com/blockquote-q-cite)
+	Print
+	Media
+	
 -------------------------------------------------------------------------------*/
 
+/* Reset */
 
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
 	margin: 0;
@@ -146,7 +154,63 @@ a:link {-webkit-tap-highlight-color: #fcd700;}
 ins {background-color: #fcd700; color: #000; text-decoration: none;}
 mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
 
-/* End Reset start all your lovely style below this comment...
+
+/* clear fix ------------------------------------------------------------------ */
+
+.media:before,
+.media:after,
+.island:before,
+.island:after,
+.islet:before,
+.islet:after,
+.cf:before,
+.cf:after{
+	content:"";
+	display:table;
+}
+.media:after,
+.island:after,
+.islet:after,
+.cf:after{
+	clear:both;
+}
+.media,
+.island,
+.islet,
+.cf{
+	zoom:1;
+}
+
+/* quotes ------------------------------------------------------------------ */
+
+q{ quotes:"Ô" "Õ" "Ò" "Ó"; }
+
+q:before{ content:"Ô"; content:open-quote; }
+q:after{ content:"Õ"; content:close-quote; }
+
+q q:before{ content: "Ò"; content: open-quote; }
+q q:after{ content: "Ó"; content: close-quote; }
+
+blockquote{ quotes: "Ò" "Ó"; }
+blockquote p:before{ content: "Ò"; content: open-quote; }
+blockquote p:after{ content: ""; content: no-close-quote; }
+blockquote p:last-of-type:after{ content: "Ó"; content: close-quote; }
+
+blockquote{
+	text-indent:-0.4em;
+}
+.source{
+	display:block;
+	text-indent:0;
+	margin-top:-Xpx;
+	margin-top:-Xrem;
+}
+.source:before{
+	content:"Ñ";
+}
+
+
+/* End, start all your lovely styles below this comment...
 -------------------------------------------------------------------------------*/
 
 
